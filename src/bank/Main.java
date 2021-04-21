@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		BankMachine model = new BankMachine();
-		View view = new View();
+		View view = new View(model);
 		Controller controller = new Controller(model, view);
 		
 		view.setVisible(true);

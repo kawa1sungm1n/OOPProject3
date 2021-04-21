@@ -19,6 +19,16 @@ public class MainMenu extends JPanel  {
 	
 	private final int PANEL_WIDTH = 710;
 	private final int PANEL_HEIGHT = 356;
+	private JButton btnCreate;
+	private JButton btnSelect;
+	private JButton btnDeposit;
+	private JButton btnWithdraw;
+	private JButton btnView;
+	private JButton btnDelete;
+	private JButton btnQuit;
+
+	
+	
 
 	
 	public MainMenu()  {
@@ -26,37 +36,37 @@ public class MainMenu extends JPanel  {
 	    this.setSize(PANEL_WIDTH, PANEL_HEIGHT);
 	    setLayout(null);
 	    
-	    JButton btnSelect = new JButton("select");
+	    btnSelect = new JButton("select");
 	    btnSelect.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    btnSelect.setBounds(12, 24, 112, 32);
 	    add(btnSelect);
 	    
-	    JButton btnDeposit = new JButton("deposit");
+	    btnDeposit = new JButton("deposit");
 	    btnDeposit.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    btnDeposit.setBounds(12, 66, 112, 32);
 	    add(btnDeposit);
 	    
-	    JButton btnWithdraw = new JButton("withdraw");
+	    btnWithdraw = new JButton("withdraw");
 	    btnWithdraw.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    btnWithdraw.setBounds(12, 108, 112, 32);
 	    add(btnWithdraw);
 	    
-	    JButton btnCreate = new JButton("create");
+	    btnCreate = new JButton("create");
 	    btnCreate.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    btnCreate.setBounds(12, 150, 112, 32);
 	    add(btnCreate);
 	    
-	    JButton btnDelete = new JButton("delete");
+	    btnDelete = new JButton("delete");
 	    btnDelete.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    btnDelete.setBounds(12, 192, 112, 32);
 	    add(btnDelete);
 	    
-	    JButton btnView = new JButton("view");
+	    btnView = new JButton("view");
 	    btnView.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    btnView.setBounds(12, 234, 112, 32);
 	    add(btnView);
 	    
-	    JButton btnQuit = new JButton("quit");
+	    btnQuit = new JButton("quit");
 	    btnQuit.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    btnQuit.setBounds(12, 276, 112, 32);
 	    add(btnQuit);
@@ -95,8 +105,29 @@ public class MainMenu extends JPanel  {
 	    lblQuit.setFont(new Font("Dubai", Font.PLAIN, 18));
 	    lblQuit.setBounds(136, 281, 151, 22);
 	    add(lblQuit);
-		
-		
 	}
+	
+	public void addCreateListener(ActionListener additionActionListener) {
+		btnCreate.addActionListener(additionActionListener);
+	}
+	public void addSelectListener(ActionListener additionActionListener) {
+		btnSelect.addActionListener(additionActionListener);
+	}
+	public void addDepositListener(ActionListener additionActionListener) {
+		btnDeposit.addActionListener(additionActionListener);
+	}
+	public void addWithdrawListener(ActionListener additionActionListener) {
+		btnWithdraw.addActionListener(additionActionListener);
+	}
+	public void addViewListener(ActionListener additionActionListener) {
+		btnView.addActionListener(additionActionListener);
+	}
+	public void addDeleteListener(ActionListener additionActionListener) {
+		btnDelete.addActionListener(additionActionListener);
+	}
+	public void addQuitListener(ActionListener additionActionListener) {
+		btnQuit.addActionListener(additionActionListener);
+	}
+	
 }
 

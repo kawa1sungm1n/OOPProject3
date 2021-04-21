@@ -15,56 +15,35 @@ import java.util.Random;
 import java.awt.*;
 import java.awt.event.*;
 
-public class WithdrawMenu extends JFrame{
+public class WithdrawMenu extends JPanel{
 	
-	private final int FRAME_WIDTH = 750;
-	private final int FRAME_HEIGHT = 450;
-	private JTextField txtWithdraw;
-	private JTextField txtDescription;
+	private final int PANEL_WIDTH = 710;
+	private final int PANEL_HEIGHT = 356;
+
 	
 	public WithdrawMenu() {
-		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-		getContentPane().setLayout(null);
-		
-		JLabel lblTitle = new JLabel("Bank Machine Simulation v1.0 >");
-		lblTitle.setForeground(Color.BLUE);
-		lblTitle.setFont(new Font("Dubai", Font.PLAIN, 20));
-		lblTitle.setBounds(12, 10, 278, 38);
-		getContentPane().add(lblTitle);
+		this.setSize(PANEL_WIDTH, PANEL_HEIGHT);
+		setLayout(null);
 		
 		JLabel lblWithdraw = new JLabel("Enter Amount to withdraw: $");
 		lblWithdraw.setFont(new Font("Dubai", Font.PLAIN, 16));
-		lblWithdraw.setBounds(12, 58, 203, 15);
-		getContentPane().add(lblWithdraw);
-		
-		txtWithdraw = new JTextField();
-		txtWithdraw.setBounds(222, 56, 94, 21);
-		getContentPane().add(txtWithdraw);
-		txtWithdraw.setColumns(10);
+		lblWithdraw.setBounds(12, 33, 203, 15);
+		add(lblWithdraw);
 		
 		JLabel lblDescription = new JLabel("Transaction Description:");
 		lblDescription.setFont(new Font("Dubai", Font.PLAIN, 16));
-		lblDescription.setBounds(43, 97, 172, 15);
-		getContentPane().add(lblDescription);
-		
-		txtDescription = new JTextField();
-		txtDescription.setColumns(10);
-		txtDescription.setBounds(222, 95, 347, 21);
-		getContentPane().add(txtDescription);
+		lblDescription.setBounds(43, 72, 172, 15);
+		add(lblDescription);
 		
 		JButton btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnOk.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnOk.setBounds(219, 149, 97, 38);
-		getContentPane().add(btnOk);
+		btnOk.setBounds(219, 124, 97, 38);
+		add(btnOk);
 		
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnCancel.setBounds(340, 149, 97, 38);
-		getContentPane().add(btnCancel);
+		btnCancel.setBounds(340, 124, 97, 38);
+		add(btnCancel);
 	}
 
 }
