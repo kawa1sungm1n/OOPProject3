@@ -11,8 +11,27 @@ public class BankMachine {
 	
 	public BankMachine() {}
 	
-	public void select(Account target) {
-		current = target;
+	public boolean noAccounts() {
+		return accounts.size() == 0;
+	}
+	
+	public ArrayList<String> getAccounts() {
+		ArrayList<String> ad = new ArrayList<String>();
+		for (int i = 0; i < accounts.size(); i++) {
+			ad.add(accounts.get(i).getDescription());
+		}
+		return ad;
+	}
+
+	public Account getCurrent() {
+		return current;
+	}
+
+	public void select(String target) {
+		for(int i = 0; i< accounts.size(); i++) {
+			if(accounts.get(i).getDescription() == target)
+				current = accounts.get(i);
+		}
 	}
 	
 	public void deposit(double amount, String description) {
@@ -29,6 +48,7 @@ public class BankMachine {
 		} else {
 			accounts.add(new AirMilesSavingsAccount(id, description, balance));
 		}
+		if (accounts.size() == 1) current = accounts.get(0);
 		id++; // 추가시 아이디 올라감ㅁ
 	}
 	

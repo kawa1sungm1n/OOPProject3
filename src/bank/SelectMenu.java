@@ -11,6 +11,7 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.Random;
 import java.awt.*;
 import java.awt.event.*;
@@ -19,6 +20,7 @@ public class SelectMenu extends JPanel {
 	
 	private final int PANEL_WIDTH = 710;
 	private final int PANEL_HEIGHT = 356;
+	private JList list;
 	private JButton btnOk;
 	private JButton btnCancel;
 	
@@ -31,10 +33,6 @@ public class SelectMenu extends JPanel {
 		lblSelect.setBounds(12, 35, 105, 15);
 		add(lblSelect);
 		
-		JComboBox menuBox = new JComboBox();
-		menuBox.setBounds(129, 32, 149, 171);
-		add(menuBox);
-		
 		btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnOk.setBounds(129, 230, 97, 38);
@@ -44,6 +42,27 @@ public class SelectMenu extends JPanel {
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnCancel.setBounds(254, 230, 97, 38);
 		add(btnCancel);
+		
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(129, 35, 222, 166);
+		add(panel);
+		
+		list = new JList();
+		list.setBackground(Color.WHITE);
+		list.setBounds(129, 35, 222, 166);
+		list.setVisible(true);
+		list.setPreferredSize(new Dimension(222, 166));
+		panel.add(list);
+		
+
+	}
+	
+	public void populate(ArrayList<String> al) {
+		list.setListData(al.toArray(new String[al.size()]));
+	}
+	public String getSelected() {
+		return list.getSelectedValue().toString();
 	}
 	
 	public void addOkListener(ActionListener a) {
@@ -52,5 +71,4 @@ public class SelectMenu extends JPanel {
 	public void addCancelListener(ActionListener a) {
 		btnCancel.addActionListener(a);
 	}
-	
 }

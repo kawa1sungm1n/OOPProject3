@@ -51,6 +51,26 @@ public class View extends JFrame {
 		
 	}
 
+	public SelectMenu getSelectmenu() {
+		return selectmenu;
+	}
+
+	public MainMenu getMainmenu() {
+		return mainmenu;
+	}
+
+	public WithdrawMenu getWithdrawmenu() {
+		return withdrawmenu;
+	}
+
+	public DepositMenu getDepositmenu() {
+		return depositmenu;
+	}
+
+	public DeleteMenu getDeletemenu() {
+		return deletemenu;
+	}
+
 	public JPanel getPanel() {
 		return panel;
 	}
@@ -107,5 +127,15 @@ public class View extends JFrame {
 	}
 	public void addWithdrawCancelListener(ActionListener a) {
 		withdrawmenu.addCancelListener(a);
+	}
+	
+	public String getCreateDescription() {
+		return createmenu.getDescription();
+	}
+	public double getCreateBalance() {
+		return createmenu.getBalance();
+	}
+	public String getCreateType() {
+		return createmenu.getType();
 	}
 }

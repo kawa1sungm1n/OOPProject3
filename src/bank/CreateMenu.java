@@ -18,13 +18,11 @@ import java.awt.event.*;
 public class CreateMenu extends JPanel {
 	private JTextField txtDes;
 	private JTextField txtBalance;
-	
 	private final int PANEL_WIDTH = 710;
 	private final int PANEL_HEIGHT = 356;
-	private JTextField textField;
-	private JTextField textField_1;
 	private JButton btnOk;
 	private JButton btnCancel;
+	private JComboBox<String> typeMenu;
 	
 	public CreateMenu() {
 		setLayout(null);
@@ -35,8 +33,10 @@ public class CreateMenu extends JPanel {
 		lblTypeMenu.setBounds(32, 49, 141, 30);
 		add(lblTypeMenu);
 		
-		JComboBox typeMenu = new JComboBox();
-		typeMenu.setBounds(185, 49, 117, 61);
+		String options[] = {"Air Miles Account", "Savings Account"};
+		typeMenu = new JComboBox(options);
+		typeMenu.setToolTipText("");
+		typeMenu.setBounds(185, 49, 175, 61);
 		add(typeMenu);
 		
 		JLabel lblDescription = new JLabel("Account Description:");
@@ -44,20 +44,20 @@ public class CreateMenu extends JPanel {
 		lblDescription.setBounds(32, 128, 141, 30);
 		add(lblDescription);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(186, 133, 344, 21);
-		add(textField);
+		txtDes = new JTextField();
+		txtDes.setColumns(10);
+		txtDes.setBounds(186, 133, 344, 21);
+		add(txtDes);
 		
 		JLabel lblBalance = new JLabel("Starting Balance: $");
 		lblBalance.setFont(new Font("Dubai", Font.PLAIN, 14));
 		lblBalance.setBounds(42, 168, 131, 30);
 		add(lblBalance);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(185, 173, 91, 21);
-		add(textField_1);
+		txtBalance = new JTextField();
+		txtBalance.setColumns(10);
+		txtBalance.setBounds(185, 173, 91, 21);
+		add(txtBalance);
 		
 		btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
@@ -74,5 +74,18 @@ public class CreateMenu extends JPanel {
 	}
 	public void addCancelListener(ActionListener a) {
 		btnCancel.addActionListener(a);
+	}
+	public String getDescription() {
+		String description = txtDes.getText();
+		txtDes.setText("");
+		return description;
+	}
+	public double getBalance() {
+		double balance = Double.parseDouble(txtBalance.getText());
+		txtBalance.setText("");
+		return balance;
+	}
+	public String getType() {
+		return typeMenu.getSelectedItem().toString();
 	}
 }

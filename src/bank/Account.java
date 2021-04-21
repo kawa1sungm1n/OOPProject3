@@ -19,6 +19,10 @@ public class Account {
 		this.fee = fee;
 	}
 	
+	public String getDescription() {
+		return description;
+	}
+
 	public void withdraw (double amount, String description) {
 		balance -= amount + fee;
 		transactions.add(new Transaction(description, amount));

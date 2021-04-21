@@ -20,7 +20,7 @@ public class WithdrawMenu extends JPanel{
 	private final int PANEL_WIDTH = 710;
 	private final int PANEL_HEIGHT = 356;
 	private JTextField txtWithdraw;
-	private JTextField texDescription;
+	private JTextField textDescription;
 	private JButton btnOk;
 	private JButton btnCancel;
 
@@ -54,15 +54,26 @@ public class WithdrawMenu extends JPanel{
 		add(txtWithdraw);
 		txtWithdraw.setColumns(10);
 		
-		texDescription = new JTextField();
-		texDescription.setColumns(10);
-		texDescription.setBounds(227, 70, 294, 21);
-		add(texDescription);
+		textDescription = new JTextField();
+		textDescription.setColumns(10);
+		textDescription.setBounds(227, 70, 294, 21);
+		add(textDescription);
 	}
 	public void addOkListener(ActionListener a) {
 		btnOk.addActionListener(a);
 	}
 	public void addCancelListener(ActionListener a) {
 		btnCancel.addActionListener(a);
+	}
+	
+	public String getDesc() {
+		String returnVal = textDescription.getText();
+		textDescription.setText("");
+		return returnVal;
+	}
+	public Double getAmount() {
+		double returnVal = Double.parseDouble(txtWithdraw.getText());
+		txtWithdraw.setText("");
+		return returnVal;
 	}
 }

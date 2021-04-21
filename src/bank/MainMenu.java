@@ -129,5 +129,13 @@ public class MainMenu extends JPanel  {
 		btnQuit.addActionListener(additionActionListener);
 	}
 	
+	public void enableButtons(boolean b) {
+		btnSelect.setEnabled(b);
+		btnDelete.setEnabled(b);
+		btnDeposit.setEnabled(b);
+		btnWithdraw.setEnabled(b);
+		btnView.setEnabled(b);
+	}
+	
 }
 

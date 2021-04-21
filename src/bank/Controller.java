@@ -12,39 +12,80 @@ public class Controller {
 	public Controller(BankMachine myModel, View myView) {
 		model = myModel;
 		view = myView;
+		view.getMainmenu().enableButtons(false);
 		
 		// construct the ActionListeners to be used by the view
-
+		
+		// Main menu
 		view.addMainCreateListener((ActionEvent e) -> {
-			// this runs when the btnClear button is clicked on the view
 			view.getCard().show(view.getPanel(), "create menu");
 		});
 		
 		view.addMainSelectListener((ActionEvent e) -> {
-			// this runs when the btnClear button is clicked on the view
+			view.getSelectmenu().populate(model.getAccounts());
 			view.getCard().show(view.getPanel(), "select menu");
 		});
 		
 		view.addMainDepositListener((ActionEvent e) -> {
-			// this runs when the btnClear button is clicked on the view
 			view.getCard().show(view.getPanel(), "deposit menu");
 		});
 		
 		view.addMainWithdrawListener((ActionEvent e) -> {
-			// this runs when the btnClear button is clicked on the view
 			view.getCard().show(view.getPanel(), "withdraw menu");
 		});
 		
 		view.addMainDeleteListener((ActionEvent e) -> {
-			// this runs when the btnClear button is clicked on the view
 			view.getCard().show(view.getPanel(), "delete menu");
 		});
 		
 		view.addMainViewListener((ActionEvent e) -> {
-			// this runs when the btnClear button is clicked on the view
 			view.getCard().show(view.getPanel(), "view menu");
 		});
 		
+		// Create
+		view.addCreateCancelListener((ActionEvent e) -> {
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		view.addCreateOkListener((ActionEvent e) -> {
+			model.create(view.getCreateType(), view.getCreateDescription(), view.getCreateBalance());
+			view.getCard().show(view.getPanel(), "main menu");
+			view.getMainmenu().enableButtons(true);
+		});
+		
+		// Select
+		view.addSelectCancelListener((ActionEvent e) -> {
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		
+		view.addSelectOkListener((ActionEvent e) -> {
+			model.select(view.getSelectmenu().getSelected());
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		
+		// Withdraw
+		view.addWithdrawCancelListener((ActionEvent e) -> {
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		
+		view.addWithdrawOkListener((ActionEvent e) -> {
+			model.withdraw(view.getWithdrawmenu().getAmount(), view.getWithdrawmenu().getDesc());;
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		
+		// Deposit
+		view.addDepositCancelListener((ActionEvent e) -> {
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		
+		view.addDepositOkListener((ActionEvent e) -> {
+			model.deposit(view.getWithdrawmenu().getAmount(), view.getWithdrawmenu().getDesc());;
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		
+		// View
+		view.addViewOkListener((ActionEvent e) -> {
+			view.getCard().show(view.getPanel(), "main menu");
+		});
 	}
 		
 }
