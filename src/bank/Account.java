@@ -40,9 +40,9 @@ public class Account {
 		} else {
 			result += "AirMiles Savings Account";
 		}
-		result += "Account Description: " + description + "\n";
-		result += "Account type: " + accountId + "\n";
-		result += "Current balance: $" + balance;
+		result += "\nAccount Description: " + description + "\n";
+		result += "Account type: " + type + "\n";
+		result += "Current balance: $" + balance + "\n";
 		for (int i = 0; i < transactions.size(); i++) {
 			result += transactions.get(i).toString() + "\n";
 		}

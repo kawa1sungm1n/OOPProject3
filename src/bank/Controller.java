@@ -35,10 +35,12 @@ public class Controller {
 		});
 		
 		view.addMainDeleteListener((ActionEvent e) -> {
+			view.getDeletemenu().setCurrent(model.getCurrent().getDescription());
 			view.getCard().show(view.getPanel(), "delete menu");
 		});
 		
 		view.addMainViewListener((ActionEvent e) -> {
+			view.getViewmenu().viewAccount(model.getCurrent());
 			view.getCard().show(view.getPanel(), "view menu");
 		});
 		
@@ -68,7 +70,7 @@ public class Controller {
 		});
 		
 		view.addWithdrawOkListener((ActionEvent e) -> {
-			model.withdraw(view.getWithdrawmenu().getAmount(), view.getWithdrawmenu().getDesc());;
+			model.withdraw(view.getWithdrawmenu().getAmount(), view.getWithdrawmenu().getDesc());
 			view.getCard().show(view.getPanel(), "main menu");
 		});
 		
@@ -78,14 +80,29 @@ public class Controller {
 		});
 		
 		view.addDepositOkListener((ActionEvent e) -> {
-			model.deposit(view.getWithdrawmenu().getAmount(), view.getWithdrawmenu().getDesc());;
+			model.deposit(view.getDepositmenu().getAmount(), view.getDepositmenu().getDesc());;
 			view.getCard().show(view.getPanel(), "main menu");
 		});
 		
 		// View
 		view.addViewOkListener((ActionEvent e) -> {
+			view.getViewmenu().clearView();
 			view.getCard().show(view.getPanel(), "main menu");
 		});
+		
+		// Delete
+		view.addDepositCancelListener((ActionEvent e) -> {
+			view.getCard().show(view.getPanel(), "main menu");
+		});
+		
+		view.addDeleteDeleteListener((ActionEvent e) -> {
+			model.delete();
+			view.getCard().show(view.getPanel(), "main menu");
+			if(model.noAccounts()) view.getMainmenu().enableButtons(false);
+		});
+		
+		// Quit
+		view.addMainQuitListener((ActionEvent e) -> {System.exit(0);});
 	}
 		
 }

@@ -39,12 +39,12 @@ public class WithdrawMenu extends JPanel{
 		lblDescription.setBounds(43, 72, 172, 15);
 		add(lblDescription);
 		
-		JButton btnOk = new JButton("Ok");
+		btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnOk.setBounds(219, 124, 97, 38);
 		add(btnOk);
 		
-		JButton btnCancel = new JButton("Cancel");
+		btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnCancel.setBounds(340, 124, 97, 38);
 		add(btnCancel);

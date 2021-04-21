@@ -77,6 +77,10 @@ public class View extends JFrame {
 	public CardLayout getCard() {
 		return card;
 	}
+	
+	public void addMainQuitListener(ActionListener a) {
+		mainmenu.addQuitListener(a);
+	}
 	public void addMainCreateListener(ActionListener a) {
 		mainmenu.addCreateListener(a);
 	}
@@ -129,6 +133,10 @@ public class View extends JFrame {
 		withdrawmenu.addCancelListener(a);
 	}
 	
+	public ViewMenu getViewmenu() {
+		return viewmenu;
+	}
+
 	public String getCreateDescription() {
 		return createmenu.getDescription();
 	}

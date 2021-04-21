@@ -48,21 +48,18 @@ public class BankMachine {
 		} else {
 			accounts.add(new AirMilesSavingsAccount(id, description, balance));
 		}
-		if (accounts.size() == 1) current = accounts.get(0);
+		current = accounts.get(0);
 		id++; // 추가시 아이디 올라감ㅁ
 	}
 	
 	public void delete() {
 		accounts.remove(current);
-		current = null;
+		if (accounts.size() != 0) current = accounts.get(0);
+		else current = null;
 	}
 	
 	public String view() {
 		return current.toString();
-	}
-	
-	public void quit() {
-		
 	}
 }
 

@@ -19,8 +19,7 @@ public class ViewMenu extends JPanel {
 	
 	private final int PANEL_WIDTH = 710;
 	private final int PANEL_HEIGHT = 356;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextArea AccountDetails;
 	private JButton btnOk;
 
 	
@@ -33,10 +32,10 @@ public class ViewMenu extends JPanel {
 		lblDirection.setBounds(12, 10, 686, 27);
 		add(lblDirection);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(12, 47, 686, 266);
-		add(textField_1);
+		AccountDetails = new JTextArea();
+		AccountDetails.setColumns(10);
+		AccountDetails.setBounds(12, 47, 686, 266);
+		add(AccountDetails);
 		
 		btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
@@ -45,5 +44,12 @@ public class ViewMenu extends JPanel {
 	}
 	public void addOkListener(ActionListener a) {
 		btnOk.addActionListener(a);
+	}
+	
+	public void viewAccount(Account a) {
+		AccountDetails.setText(a.toString());
+	}
+	public void clearView() {
+		AccountDetails.setText("");
 	}
 }
