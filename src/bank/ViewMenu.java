@@ -21,6 +21,8 @@ public class ViewMenu extends JPanel {
 	private final int PANEL_HEIGHT = 356;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JButton btnOk;
+
 	
 	public ViewMenu()  {
 		this.setSize(PANEL_WIDTH, PANEL_HEIGHT);
@@ -36,9 +38,12 @@ public class ViewMenu extends JPanel {
 		textField_1.setBounds(12, 47, 686, 266);
 		add(textField_1);
 		
-		JButton btnNewButton = new JButton("Ok");
-		btnNewButton.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnNewButton.setBounds(12, 323, 199, 27);
-		add(btnNewButton);
+		btnOk = new JButton("Ok");
+		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
+		btnOk.setBounds(12, 323, 199, 27);
+		add(btnOk);
+	}
+	public void addOkListener(ActionListener a) {
+		btnOk.addActionListener(a);
 	}
 }

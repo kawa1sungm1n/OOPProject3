@@ -21,6 +21,8 @@ public class DepositMenu extends JPanel {
 	private final int PANEL_HEIGHT = 356;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JButton btnOk;
+	private JButton btnCancel;
 
 	
 	public DepositMenu() {
@@ -37,12 +39,12 @@ public class DepositMenu extends JPanel {
 		lblDescription.setBounds(33, 61, 172, 15);
 		add(lblDescription);
 		
-		JButton btnOk = new JButton("Ok");
+		btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnOk.setBounds(217, 112, 97, 38);
 		add(btnOk);
 		
-		JButton btnCancel = new JButton("Cancel");
+		btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnCancel.setBounds(337, 112, 97, 38);
 		add(btnCancel);
@@ -56,6 +58,12 @@ public class DepositMenu extends JPanel {
 		textField_1.setBounds(208, 59, 226, 21);
 		add(textField_1);
 		textField_1.setColumns(10);
-
 	}
+	public void addOkListener(ActionListener a) {
+		btnOk.addActionListener(a);
+	}
+	public void addCancelListener(ActionListener a) {
+		btnCancel.addActionListener(a);
+	}
+	
 }

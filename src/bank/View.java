@@ -24,8 +24,6 @@ public class View extends JFrame {
 	private JPanel panel = new JPanel();
 	
 
-	
-
 	public View(BankMachine bm) {
 		this.bm = bm;
 	    
@@ -76,5 +74,38 @@ public class View extends JFrame {
 	}
 	public void addMainSelectListener(ActionListener a) {
 		mainmenu.addSelectListener(a);
+	}
+	public void addSelectOkListener(ActionListener a) {
+		selectmenu.addOkListener(a);
+	}
+	public void addSelectCancelListener(ActionListener a) {
+		selectmenu.addCancelListener(a);
+	}
+	public void addDepositOkListener(ActionListener a) {
+		depositmenu.addOkListener(a);
+	}
+	public void addDepositCancelListener(ActionListener a) {
+		depositmenu.addCancelListener(a);
+	}
+	public void addCreateOkListener(ActionListener a) {
+		createmenu.addOkListener(a);
+	}
+	public void addCreateCancelListener(ActionListener a) {
+		createmenu.addCancelListener(a);
+	}
+	public void addDeleteDeleteListener(ActionListener a) {
+		deletemenu.addDeleteListener(a);
+	}
+	public void addDeleteCancelListener(ActionListener a) {
+		deletemenu.addCancelListener(a);
+	}
+	public void addViewOkListener(ActionListener a) {
+		viewmenu.addOkListener(a);
+	}
+	public void addWithdrawOkListener(ActionListener a) {
+		withdrawmenu.addOkListener(a);
+	}
+	public void addWithdrawCancelListener(ActionListener a) {
+		withdrawmenu.addCancelListener(a);
 	}
 }

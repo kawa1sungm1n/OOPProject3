@@ -19,6 +19,10 @@ public class WithdrawMenu extends JPanel{
 	
 	private final int PANEL_WIDTH = 710;
 	private final int PANEL_HEIGHT = 356;
+	private JTextField txtWithdraw;
+	private JTextField texDescription;
+	private JButton btnOk;
+	private JButton btnCancel;
 
 	
 	public WithdrawMenu() {
@@ -44,6 +48,21 @@ public class WithdrawMenu extends JPanel{
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnCancel.setBounds(340, 124, 97, 38);
 		add(btnCancel);
+		
+		txtWithdraw = new JTextField();
+		txtWithdraw.setBounds(227, 31, 116, 21);
+		add(txtWithdraw);
+		txtWithdraw.setColumns(10);
+		
+		texDescription = new JTextField();
+		texDescription.setColumns(10);
+		texDescription.setBounds(227, 70, 294, 21);
+		add(texDescription);
 	}
-
+	public void addOkListener(ActionListener a) {
+		btnOk.addActionListener(a);
+	}
+	public void addCancelListener(ActionListener a) {
+		btnCancel.addActionListener(a);
+	}
 }

@@ -19,6 +19,9 @@ public class DeleteMenu extends JPanel {
 	
 	private final int PANEL_WIDTH = 710;
 	private final int PANEL_HEIGHT = 356;
+	private JButton btnDelete;
+	private JButton btnCancel;
+	
 	
 	public DeleteMenu() {
 		this.setSize(PANEL_WIDTH, PANEL_HEIGHT);
@@ -29,12 +32,12 @@ public class DeleteMenu extends JPanel {
 		lblDelete.setBounds(12, 32, 185, 15);
 		add(lblDelete);
 		
-		JButton btnDelete = new JButton("Delete");
+		btnDelete = new JButton("Delete");
 		btnDelete.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnDelete.setBounds(193, 57, 97, 38);
 		add(btnDelete);
 		
-		JButton btnCancel = new JButton("Cancel");
+		btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnCancel.setBounds(314, 57, 97, 38);
 		add(btnCancel);
@@ -45,6 +48,13 @@ public class DeleteMenu extends JPanel {
 		lblNewLabel.setBounds(199, 32, 212, 15);
 		add(lblNewLabel);
 
+	}
+	
+	public void addDeleteListener(ActionListener a) {
+		btnDelete.addActionListener(a);
+	}
+	public void addCancelListener(ActionListener a) {
+		btnCancel.addActionListener(a);
 	}
 
 }

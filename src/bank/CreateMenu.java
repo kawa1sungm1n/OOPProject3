@@ -23,6 +23,8 @@ public class CreateMenu extends JPanel {
 	private final int PANEL_HEIGHT = 356;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JButton btnOk;
+	private JButton btnCancel;
 	
 	public CreateMenu() {
 		setLayout(null);
@@ -57,14 +59,20 @@ public class CreateMenu extends JPanel {
 		textField_1.setBounds(185, 173, 91, 21);
 		add(textField_1);
 		
-		JButton btnOk = new JButton("Ok");
+		btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnOk.setBounds(179, 232, 97, 38);
 		add(btnOk);
 		
-		JButton btnCancel = new JButton("Cancel");
+		btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
 		btnCancel.setBounds(288, 232, 97, 38);
 		add(btnCancel);
+	}
+	public void addOkListener(ActionListener a) {
+		btnOk.addActionListener(a);
+	}
+	public void addCancelListener(ActionListener a) {
+		btnCancel.addActionListener(a);
 	}
 }
