@@ -2,13 +2,9 @@ package bank;
 
 public class SavingsAccount extends Account {
 		
-	public SavingsAccount(int accountId, String description, String type, double balance, double fee) {
-		super(accountId, description, type, balance, fee);
+	public SavingsAccount(int accountId, String description, double balance) {
+		super(accountId, description, "Savings", balance, 0.5);
 		// TODO Auto-generated constructor stub
 	}
-	
-//	public String toString() {
-//		
-//	}
 
 }
