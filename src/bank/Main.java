@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		BankMachine model = new BankMachine();
-		JFrame view = new MainMenu(model);
+		View view = new View();
 		Controller controller = new Controller(model, view);
 		
 		view.setVisible(true);

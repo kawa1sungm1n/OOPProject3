@@ -15,35 +15,36 @@ import java.util.Random;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DeleteMenu extends JFrame {
+public class DeleteMenu extends JPanel {
 	
-	private final int FRAME_WIDTH = 750;
-	private final int FRAME_HEIGHT = 450;
+	private final int PANEL_WIDTH = 710;
+	private final int PANEL_HEIGHT = 356;
 	
 	public DeleteMenu() {
-		this.setSize(FRAME_WIDTH,FRAME_HEIGHT);
-		getContentPane().setLayout(null);
-		
-		JLabel lblTitle = new JLabel("Bank Machine Simulation v1.0 >");
-		lblTitle.setForeground(Color.BLUE);
-		lblTitle.setFont(new Font("Dubai", Font.PLAIN, 20));
-		lblTitle.setBounds(12, 10, 278, 38);
-		getContentPane().add(lblTitle);
+		this.setSize(PANEL_WIDTH, PANEL_HEIGHT);
+		setLayout(null);
 		
 		JLabel lblDelete = new JLabel("Delete Current Account?");
 		lblDelete.setFont(new Font("Dubai", Font.PLAIN, 16));
-		lblDelete.setBounds(12, 58, 185, 15);
-		getContentPane().add(lblDelete);
+		lblDelete.setBounds(12, 32, 185, 15);
+		add(lblDelete);
 		
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnDelete.setBounds(193, 83, 97, 38);
-		getContentPane().add(btnDelete);
+		btnDelete.setBounds(193, 57, 97, 38);
+		add(btnDelete);
 		
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnCancel.setBounds(314, 83, 97, 38);
-		getContentPane().add(btnCancel);
+		btnCancel.setBounds(314, 57, 97, 38);
+		add(btnCancel);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setForeground(Color.ORANGE);
+		lblNewLabel.setFont(new Font("Dubai", Font.PLAIN, 16));
+		lblNewLabel.setBounds(199, 32, 212, 15);
+		add(lblNewLabel);
+
 	}
 
 }

@@ -15,41 +15,30 @@ import java.util.Random;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ViewMenu extends JFrame {
+public class ViewMenu extends JPanel {
 	
-	private final int FRAME_WIDTH = 750;
-	private final int FRAME_HEIGHT = 450;
+	private final int PANEL_WIDTH = 710;
+	private final int PANEL_HEIGHT = 356;
 	private JTextField textField;
+	private JTextField textField_1;
 	
 	public ViewMenu()  {
-		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-		getContentPane().setLayout(null);
-		
-		JLabel lblTitle = new JLabel("Bank Machine Simulation v1.0 >");
-		lblTitle.setForeground(Color.BLUE);
-		lblTitle.setFont(new Font("Dubai", Font.PLAIN, 20));
-		lblTitle.setBounds(12, 10, 278, 38);
-		getContentPane().add(lblTitle);
+		this.setSize(PANEL_WIDTH, PANEL_HEIGHT);
+		setLayout(null);
 		
 		JLabel lblDirection = new JLabel("Transactions of currently selected account:");
 		lblDirection.setFont(new Font("Dubai", Font.PLAIN, 16));
-		lblDirection.setBounds(12, 49, 351, 27);
-		getContentPane().add(lblDirection);
+		lblDirection.setBounds(12, 10, 686, 27);
+		add(lblDirection);
 		
-		textField = new JTextField();
-		textField.setBounds(12, 86, 710, 266);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(12, 47, 686, 266);
+		add(textField_1);
 		
 		JButton btnNewButton = new JButton("Ok");
 		btnNewButton.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setBounds(12, 362, 119, 27);
-		getContentPane().add(btnNewButton);
-		
-
+		btnNewButton.setBounds(12, 323, 199, 27);
+		add(btnNewButton);
 	}
 }

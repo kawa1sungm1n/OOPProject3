@@ -15,51 +15,47 @@ import java.util.Random;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DepositMenu extends JFrame {
+public class DepositMenu extends JPanel {
 	
-	private final int FRAME_WIDTH = 750;
-	private final int FRAME_HEIGHT = 450;
-	private JTextField txtDeposit;
-	private JTextField txtDescription;
+	private final int PANEL_WIDTH = 710;
+	private final int PANEL_HEIGHT = 356;
+	private JTextField textField;
+	private JTextField textField_1;
+
 	
 	public DepositMenu() {
-		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-		getContentPane().setLayout(null);
-		
-		JLabel lblTitle = new JLabel("Bank Machine Simulation v1.0 >");
-		lblTitle.setForeground(Color.BLUE);
-		lblTitle.setFont(new Font("Dubai", Font.PLAIN, 20));
-		lblTitle.setBounds(12, 10, 278, 38);
-		getContentPane().add(lblTitle);
+		this.setSize(PANEL_WIDTH, PANEL_HEIGHT);
+		setLayout(null);
 		
 		JLabel lblDeposit = new JLabel("Enter Amount to deposit: $");
 		lblDeposit.setFont(new Font("Dubai", Font.PLAIN, 16));
-		lblDeposit.setBounds(22, 58, 184, 15);
-		getContentPane().add(lblDeposit);
+		lblDeposit.setBounds(12, 26, 184, 15);
+		add(lblDeposit);
 		
 		JLabel lblDescription = new JLabel("Transaction Description:");
 		lblDescription.setFont(new Font("Dubai", Font.PLAIN, 16));
-		lblDescription.setBounds(43, 93, 172, 15);
-		getContentPane().add(lblDescription);
-		
-		txtDeposit = new JTextField();
-		txtDeposit.setColumns(10);
-		txtDeposit.setBounds(227, 56, 94, 21);
-		getContentPane().add(txtDeposit);
-		
-		txtDescription = new JTextField();
-		txtDescription.setColumns(10);
-		txtDescription.setBounds(227, 91, 347, 21);
-		getContentPane().add(txtDescription);
+		lblDescription.setBounds(33, 61, 172, 15);
+		add(lblDescription);
 		
 		JButton btnOk = new JButton("Ok");
 		btnOk.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnOk.setBounds(227, 144, 97, 38);
-		getContentPane().add(btnOk);
+		btnOk.setBounds(217, 112, 97, 38);
+		add(btnOk);
 		
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Dubai", Font.PLAIN, 16));
-		btnCancel.setBounds(347, 144, 97, 38);
-		getContentPane().add(btnCancel);
+		btnCancel.setBounds(337, 112, 97, 38);
+		add(btnCancel);
+		
+		textField = new JTextField();
+		textField.setBounds(208, 24, 131, 21);
+		add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(208, 59, 226, 21);
+		add(textField_1);
+		textField_1.setColumns(10);
+
 	}
 }

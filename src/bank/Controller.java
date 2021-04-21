@@ -15,10 +15,10 @@ public class Controller {
 		
 		// construct the ActionListeners to be used by the view
 
-		view.addClearListener((ActionEvent e) -> {
-			// this runs when the btnClear button is clicked on the view
-			model.reset();
-			view.reset();
-		});
+//		// view.addClearListener((ActionEvent e) -> {
+//			// this runs when the btnClear button is clicked on the view
+//			model.reset();
+//			view.reset();
+//		});
 	}
 }
